@@ -1,0 +1,127 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: Arial, sans-serif;
+}
+body header {
+  width: calc(100vw - 50px);
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3vh;
+}
+body header h1 {
+  margin: 0;
+  color: #bb86fc;
+}
+body header #formUsername {
+  display: flex;
+}
+body header #formUsername input {
+  padding: 8px;
+  font-size: 14px;
+  border: 2px solid #bb86fc;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+}
+body header #formUsername input[type=text] {
+  width: 150px;
+  border-radius: 4px 0 0 4px;
+}
+body header #formUsername input[type=submit] {
+  cursor: pointer;
+  background-color: #bb86fc;
+  transition: background-color 0.2s;
+  border-radius: 0 4px 4px 0;
+}
+body header #formUsername input[type=submit]:hover {
+  background-color: rgb(214.9677419355, 183.7661290323, 253.2338709677);
+}
+body #messages {
+  width: 80vw;
+  height: 70vh;
+  padding: 15px;
+  background-color: #1e1e1e;
+  border: 2px solid #bb86fc;
+  border-radius: 15px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+body #messages .msg {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+body #messages .msg div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+body #messages .msg div strong {
+  color: #03dac6;
+}
+body #messages .msg div img {
+  max-width: 30%;
+  max-height: 200px;
+  border-radius: 8px;
+  margin-left: 5px;
+}
+body #messages .msg div p {
+  margin: 0 0 0 5px;
+}
+body #messages .msg .date {
+  color: #a0a0a0;
+  font-size: 12px;
+  margin: 2px 0 0 0;
+}
+body #messages .msg pre {
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 0 0 0 5px;
+}
+body #messages .msg code {
+  font-family: "Consolas", monospace;
+}
+body #sender {
+  width: 80vw;
+  display: flex;
+  gap: 5px;
+}
+body #sender textarea {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid #bb86fc;
+  border-radius: 8px 0 0 8px;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  resize: none;
+  min-height: 40px;
+  max-height: 100px;
+}
+body #sender input[type=submit] {
+  padding: 10px 20px;
+  border: 2px solid #bb86fc;
+  border-radius: 0 8px 8px 0;
+  background-color: #bb86fc;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+body #sender input[type=submit]:hover {
+  background-color: rgb(214.9677419355, 183.7661290323, 253.2338709677);
+}/*# sourceMappingURL=style.css.map */

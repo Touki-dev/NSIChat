@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salon de Chat - NSI 🧑‍💻</title>
+    <!-- Lien vers highlight.js (CSS) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+    <!-- Lien vers ton fichier CSS -->
+    <link rel="stylesheet" href="/public/css/style.css">
+    <!-- Lien vers js-cookie -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>NSI 🧑‍💻</h1>
+        <form id="formUsername" action="/set_username" method="POST">
+            <input type="text" id="username" placeholder="Ton pseudo" required>
+            <input type="submit" value="Valider">
+        </form>
+    </header>
+    <div id="messages">
+        {% for msg in messages %}
+            {% if msg.message.split(' ')[0] == "/image" %}
+                <div class="msg">
+                    <div>
+                        <strong>{{ msg.username }} :</strong>
+                        <img src="{{ msg.message.split(' ')[1] }}" alt="Image envoyée">
+                    </div>
+                    <p class=>{{ msg.date }}</p>
+                </div>
+            {% else %}
+                <div class="msg">
+                    <div>
+                        <strong>{{ msg.username }} :</strong>
+                        <p>{{ msg.message }}</p>
+                    </div>
+                    <p class=>{{ msg.date }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <form id="sender">
+        <textarea id="messageInput" placeholder="Ton message (utilise ``` pour du code)" rows="1" required></textarea>
+        <input type="submit" value="Envoyer">
+    </form>
+
+    <!-- Lien vers Socket.IO (CDN) -->
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <!-- Lien vers highlight.js (JS) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <!-- Lien vers ton fichier JavaScript -->
+    <script src="/public/js/index.js"></script>
+</body>
+</html>
