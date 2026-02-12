@@ -47,4 +47,4 @@ def clear_messages():
 
 if __name__ == '__main__':
     init_db()  # Initialiser la base de données au démarrage
-    socketio.run(app, debug=True)
+    socketio.run(app, debug=True,host='0.0.0.0',port=5001)
